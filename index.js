@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const allowedOrigins = [
-    'https://bright-dusk-f55498.netlify.app'
+    'https://jikkutodomern.netlify.app/'
     // Add more origins if necessary
 ];
 
