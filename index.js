@@ -9,6 +9,9 @@ const { todoRouter } = require('./Router/todo.js');
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(cors(
+  { origin : "https://bright-dusk-f55498.netlify.app/"}
+))
 
 app.use("/api",userRouter);
 app.use("/todo",todoRouter);
