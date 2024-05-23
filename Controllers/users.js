@@ -9,14 +9,14 @@ const userLogin = async (req,res) => {
         const user = await userModel.findOne({ username });
         if(!user)
             {
-                res.json("User not registered!")
+              return  res.json("User not registered!")
             }
 
         const loggedIn = await bcrypt.compare(password,user.password)
 
         if(!loggedIn)
             {
-                res.json("Username/Password Incorrect")
+               return res.json("Username/Password Incorrect")
             }
         const token = jwt.sign({id:user._id},"secret");
         res.json({token,userID:user._id})
